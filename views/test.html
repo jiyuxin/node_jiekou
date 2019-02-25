@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>111</title>
+</head>
+<body>
+  hello my dear!!!
+  <script type="text/javascript">
+    function ajax(cb) {
+      var xhr = new XMLHttpRequest()
+      xhr.onreadystatechange = function () {
+        if (this.readyState == 4) {
+          cb(this.responseText)
+        }
+      }
+      xhr.open('get', '/jiekou')
+      xhr.send(null)
+    }
+    ajax(function (res) {
+      console.log(JSON.parse(res))
+    })
+  </script>
+</body>
+</html>
